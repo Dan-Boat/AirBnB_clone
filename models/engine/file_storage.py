@@ -17,6 +17,7 @@ class FileStorage:
         __file_path (str): The name of the file to save objects to.
         __objects (dict): A dictionary of instantiated objects.
     """
+    
     __file_path = "file.json"
     __objects = {}
 
@@ -25,7 +26,7 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        """Set in __objects obj with key <obj_class_name>.id"""
+        """Set in __objects obj with key <obj_class_name>.id."""
         key = f"{obj.__class__.__name__}.{obj.id}"
         FileStorage.__objects[key] = obj
 
